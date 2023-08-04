@@ -1,7 +1,7 @@
 // Variabili globali
 const rows = 6;
 const cols = 7;
-let currentPlayer = "red"; // Il giocatore corrente, può essere "red" o "yellow"
+let currentPlayer = "rosso"; // Il giocatore corrente, può essere "red" o "yellow"
 let gameBoard = []; // Matrice che rappresenta il campo di gioco
 
 // Funzione per generare la griglia di gioco
@@ -31,7 +31,7 @@ function dropPiece(col) {
             alert(`Il giocatore ${currentPlayer} ha vinto!`);
             resetGame();
         } else {
-            currentPlayer = currentPlayer === "red" ? "yellow" : "red";
+            currentPlayer = currentPlayer === "rosso" ? "giallo" : "rosso";
         }
     }
 }
@@ -89,9 +89,9 @@ function resetGame() {
     gameBoard = Array.from({ length: rows }, () => Array(cols).fill(null));
     const cells = document.querySelectorAll(".cell");
     cells.forEach((cell) => {
-        cell.classList.remove("red", "yellow");
+        cell.classList.remove("rosso", "giallo");
     });
-    currentPlayer = "red";
+    currentPlayer = "rosso";
 }
 
 createBoard(); // Inizializza la griglia di gioco all'avvio della pagina
