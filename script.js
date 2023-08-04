@@ -29,7 +29,6 @@ function dropPiece(col) {
         cell.classList.add(currentPlayer);
         if (checkWin(row, col)) {
             alert(`Il giocatore ${currentPlayer} ha vinto!`);
-            resetGame();
         } else {
             currentPlayer = currentPlayer === "rosso" ? "giallo" : "rosso";
         }
